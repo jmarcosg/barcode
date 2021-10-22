@@ -35,8 +35,6 @@
 
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a class="dropdown-item" href="#">Listar artículos</a></li>
-                                <li><a class="dropdown-item" href="#">Crear nuevo código de barras</a></li>
-                                <li><a class="dropdown-item" href="#">Crear nuevo código de barras</a></li>
                             </ul>
                         </li>
                     </ul>

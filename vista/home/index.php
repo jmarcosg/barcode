@@ -10,7 +10,7 @@ include_once '../estructura/header.php';
 <h3 class="text-center mt-4">phpBarcode</h3>
 
 <p class="ms-4 mt-5">
-    Esta pequeña implementacion de la libreria "phpBarcode" permite la creación de códigos de barra en cuatro formatos diferentes: Code 128, Code 39, Code 2of5 y Codabar. Además, está la posibilidad de crearlos tanto de manera horizontal como de manera vertical, se puede modificar las alturas de los mismos y elegir uno de los cuatro formatos de código de barras.
+    Esta pequeña implementacion de la libreria <B><I>"phpBarcode"</I></B> permite la creación de códigos de barra en cuatro formatos diferentes: <B>Code 128, Code 39, Code 2of5 y Codabar.</B> Además, está la posibilidad de crearlos tanto de manera horizontal como de manera vertical, se puede modificar las alturas de los mismos y elegir uno de los cuatro formatos de código de barras.
 </p>
 
 <p class="ms-4 mt-3">
