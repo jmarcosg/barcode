@@ -58,8 +58,9 @@ class articulo
     }
 
     // Metodos unicos
-    public function setear($nombre, $codigo)
+    public function setear($id, $nombre, $codigo)
     {
+        $this->setId($id);
         $this->setNombre($nombre);
         $this->setCodigo($codigo);
     }
@@ -82,6 +83,7 @@ class articulo
                     $row = $base->Registro();
 
                     $this->setear(
+                        $row['id'],
                         $row['nombre'],
                         $row['codigo']
                     );
@@ -152,21 +154,23 @@ class articulo
     {
         $arreglo = array();
         $base = new BaseDatos();
-        $sql = "SELECT * FROM persona ";
+        $sql = "SELECT * FROM articulo ";
 
         if ($condicion != "") {
             $sql .= 'WHERE ' . $condicion;
         }
 
         if ($base->Iniciar()) {
+
             $res = $base->Ejecutar($sql);
 
             if ($res > -1) {
                 if ($res > 0) {
                     while ($row = $base->Registro()) {
-                        $articulo = new Articulo();
+                        $articulo = new articulo();
 
                         $articulo->setear(
+                            $row['id'],
                             $row['nombre'],
                             $row['codigo']
                         );

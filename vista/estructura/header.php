@@ -1,3 +1,7 @@
+<?php
+include_once '../../configuracion.php';
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -31,10 +35,10 @@
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Implementación</a>
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Implementación</a>
 
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Listar artículos</a></li>
+                                <li><a class="dropdown-item" href="../src">Listar artículos</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -43,8 +47,5 @@
         </nav>
 
         <main role="main">
-        <?php
-include_once '../../configuracion.php';
-?>
         </main>
     </header>

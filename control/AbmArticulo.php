@@ -1,43 +1,45 @@
 <?php
 
-class AbmUsuario
+class AbmArticulo
 {
-    private function cargarObjeto($parametro)
+    public function cargarObjeto($parametro)
     {
         $articulo = null;
 
-        if (array_key_exists('id_articulo', $parametro) && array_key_exists('nombre_articulo', $parametro) && array_key_exists('codigo_articulo', $parametro)) {
-            $articulo = new Articulo();
+        if (array_key_exists('id_articulo', $parametro) && array_key_exists('nombreArticuloNuevo', $parametro) && array_key_exists('codigoArticuloNuevo', $parametro)) {
+            $articulo = new articulo();
 
             $articulo->setear(
                 $parametro['id_articulo'],
-                $parametro['nombre_articulo'],
-                $parametro['codigo_articulo']
+                $parametro['nombreArticuloNuevo'],
+                $parametro['codigoArticuloNuevo']
             );
         }
 
         return $articulo;
     }
 
-    private function cargarObjetoConClave($parametro)
+    public function cargarObjetoConClave($parametro)
     {
         $objArticulo = null;
 
-        if (isset($parametro['id_articulo'])) {
-            $objArticulo = new Articulo();
-            $objArticulo->setear($parametro['id_articulo'], null, null);
+        if (isset($parametro['id'])) {
+            $objArticulo = new articulo();
+            $objArticulo->setear($parametro['id'], null, null);
         }
 
         return $objArticulo;
     }
 
-    private function seteadosCamposClaves($parametro)
+    public function seteadosCamposClaves($parametro)
     {
         $resp = false;
 
         if (isset($parametro)) {
             $resp = true;
         }
+
+        echo $resp;
         return $resp;
     }
 
@@ -56,6 +58,7 @@ class AbmUsuario
     public function baja($parametro)
     {
         $respuesta = false;
+        $objArticulo = new articulo();
 
         if ($this->seteadosCamposClaves($parametro)) {
             $objArticulo = $this->cargarObjetoConClave($parametro);
@@ -71,9 +74,9 @@ class AbmUsuario
     public function modificar($parametro)
     {
         $respuesta = false;
+        $objArticulo = new articulo();
 
         if ($this->seteadosCamposClaves($parametro)) {
-            $objArticulo = $this->buscar($parametro);
             $objArticulo = $this->cargarObjeto($parametro);
 
             if ($objArticulo != null && $objArticulo->modificar()) {
@@ -89,20 +92,21 @@ class AbmUsuario
         $where = " true ";
 
         if ($param != null) {
-            if (isset($param['id_usuario'])) {
-                $where .= " and id = '" . $param['id_usuario'] . "'";
+            if (isset($param['id'])) {
+                $where .= " and id = '" . $param['id'] . "'";
             }
 
-            if (isset($param['nombre_articulo'])) {
-                $where .= " and nombre = '" . $param['nombre_articulo'] . "'";
+            if (isset($param['nombre'])) {
+                $where .= " and nombre = '" . $param['nombre'] . "'";
             }
 
-            if (isset($param['codigo_articulo'])) {
-                $where .= " and codigo ='" . $param['codigo_articulo'] . "'";
+            if (isset($param['codigo'])) {
+                $where .= " and codigo ='" . $param['codigo'] . "'";
             }
         }
 
-        $arreglo = articulo::listar($where);
+        $articulo = new articulo();
+        $arreglo = $articulo->listar($where);
 
         return $arreglo;
     }
