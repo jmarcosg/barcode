@@ -32,11 +32,7 @@ spl_autoload_register(function ($clase) {
     $directorys = array(
         $GLOBALS['ROOT'] . 'modelo/',
         $GLOBALS['ROOT'] . 'modelo/conector/',
-        // $GLOBALS['ROOT'] . 'control/1/',
-        // $GLOBALS['ROOT'] . 'control/2/',
-        // $GLOBALS['ROOT'] . 'control/3/',
-        // $GLOBALS['ROOT'] . 'control/4/',
-        // $GLOBALS['ROOT'] . 'control/5/',
+        $GLOBALS['ROOT'] . 'control/',
     );
     //print_r($directorys) ;
     foreach ($directorys as $directory) {

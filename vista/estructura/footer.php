@@ -1,7 +1,7 @@
 <!-- Pie redirect index php htdocs -->
 <footer class="bg-dark mt-auto">
     <div class="text-center text-white py-2" style="background-color: rgba(0, 0, 0, 0.2);">
-        <a class="text-white" href="#">Desarrollado por Cristhian Cantero y Juan Marcos Gonzalez</a>
+        <a class="text-white" href="https://github.com/jmarcosg/phpBarcode">Desarrollado por Cristhian Cantero y Juan Marcos Gonzalez</a>
     </div>
 </footer>
 
