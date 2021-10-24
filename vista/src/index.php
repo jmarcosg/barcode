@@ -3,7 +3,7 @@ $titulo = "Listado de Codigos";
 include_once '../estructura/header.php';
 
 $abmArticulo = new AbmArticulo();
-$lista = $abmArticulo->buscar(null);
+$listaArticulos = $abmArticulo->buscar(null);
 
 ?>
 
@@ -20,31 +20,31 @@ $lista = $abmArticulo->buscar(null);
         </thead>
 
         <?php
-        if (count($lista) > 0) {
-            foreach ($lista as $var) {
-                $id = $var->getId();
-                echo "<tr>
-            <td class='text-center'>{$var->getId()}</td>
-            <td class='text-center'>{$var->getNombre()}</td>
-            <td class='text-center'>{$var->getCodigo()}</td>";
-                echo "<form method='post' action='actualizarArticulo.php'>
+if (count($listaArticulos) > 0) {
+    foreach ($listaArticulos as $articulo) {
+        $id = $articulo->getId();
+        echo "<tr>
+            <td class='text-center'>{$articulo->getId()}</td>
+            <td class='text-center'>{$articulo->getNombre()}</td>
+            <td class='text-center'>{$articulo->getCodigo()}</td>";
+        echo "<form method='post' action='actualizarArticulo.php'>
         <td class='text-center'>
         <input name='id_articulo' id='id_articulo' type='hidden' value='$id'><button class='btn btn-warning btn-sm' type='submit'><i class='fas fa-user-edit'></i></button></td></form>
 
         <form method='post' action='verCodigoBarra.php'>
         <td class='text-center'>
-        <input name='codigo_articulo' id='codigo_articulo' type='hidden' value='{$var->getCodigo()}'><button class='btn btn-warning btn-sm' type='submit'><i class='fas fa-barcode'></i></button></td></form>";
+        <input name='codigo_articulo' id='codigo_articulo' type='hidden' value='{$articulo->getCodigo()}'><button class='btn btn-warning btn-sm' type='submit'><i class='fas fa-barcode'></i></button></td></form>";
 
-                echo "</button></td></form></tr>";
-            }
-        }
-        ?>
+        echo "</button></td></form></tr>";
+    }
+}
+?>
     </table>
     <?php
-    if (isset($_GET['Message'])) {
-        print '<script type="text/javascript">alert("' . $_GET['Message'] . '");</script>';
-    }
-    ?>
+if (isset($_GET['Message'])) {
+    print '<script type="text/javascript">alert("' . $_GET['Message'] . '");</script>';
+}
+?>
 </div>
 
 <?php

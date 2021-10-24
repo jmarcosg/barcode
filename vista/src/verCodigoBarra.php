@@ -15,20 +15,19 @@ $codigo = $datos['codigo_articulo'];
 $codigoBarra = new Picqer\Barcode\BarcodeGeneratorPNG();
 
 ?>
-
-<div class="container mt-3" id="panel">
-    <div class="row">
-        <div class="col-md-6 offset-md-3" style="padding: 20px; border: solid #000 1px; box-shadow: 10px 10px 5px #888888;">
-            <div class="panel-heading">
-                <h1>Codigo de barra generado</h1>
-            </div>
-            <hr>
-            <div class="qrbox" style="text-align: center;">
-                <?php echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_CODE_93)) . '">'; ?>
+<div class="container mt-3">
+    <div class="card">
+        <h5 class="card-header">Código de barra generado</h5>
+        <div class="card-body">
+            <div class="qrbox mt-3" style="text-align: center;">
+                <?php echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_CODE_39)) . '">'; ?>
                 <?php echo '<p>' . $codigo . '</p>'; ?>
             </div>
-            <hr>
-            <a href="index.php">Generar otro codigo...</a>
+
+            <div class="btn-group">
+                <a href="index.php" class="btn btn-secondary">Volver</a>
+                <a href="#" class="btn btn-primary">Descargar</a>
+            </div>
         </div>
     </div>
 </div>
