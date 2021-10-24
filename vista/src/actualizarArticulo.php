@@ -5,8 +5,10 @@ $titulo = "Listado de Codigos";
 $datos = data_submitted();
 $abmArticulo = new AbmArticulo();
 
+$idArticulo = $datos['id_articulo'];
+
 $listaArticulo = $abmArticulo->buscar($datos);
-$objArticulo = $listaArticulo[0];
+$objArticulo = $listaArticulo[$idArticulo];
 ?>
 
 <div class="container">
