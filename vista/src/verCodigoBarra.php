@@ -4,6 +4,7 @@ include_once '../estructura/header.php';
 require_once '../../vendor/autoload.php';
 
 $datos = data_submitted();
+print_r($datos);
 
 if (!$datos['codigo_articulo']) {
     header('Location: index.php');
@@ -24,9 +25,11 @@ $codigoBarra = new Picqer\Barcode\BarcodeGeneratorPNG();
                 <?php echo '<p>' . $codigo . '</p>'; ?>
             </div>
 
-            <div class="btn-group">
-                <a href="index.php" class="btn btn-secondary">Volver</a>
-                <a href="#" class="btn btn-primary">Descargar</a>
+            <div class="text-center">
+                <div class="btn-group">
+                    <a href="index.php" class="btn btn-secondary">Volver</a>
+                    <a href="#" class="btn btn-primary">Descargar</a>
+                </div>
             </div>
         </div>
     </div>

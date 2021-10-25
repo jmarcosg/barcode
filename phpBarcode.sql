@@ -14,8 +14,8 @@ CREATE TABLE `articulo` (
 --
 
 INSERT INTO `articulo` (`id`, `nombre`, `codigo`) VALUES
-('1', 'Articulo 1', 'ABC123'),
-('2', 'Articulo 2', '123456'),
-('3', 'Articulo 3', 'FzT59Ps42wb'),
-('4', 'Articulo 4', '26890vWrexa1xj780op'),
-('5', 'Articulo 5', 'MYzZSzU49wK3X7Gh');
+('1', 'Artículo 1', 'ABC123'),
+('2', 'Artículo 2', '123456'),
+('3', 'Artículo 3', 'FzT59Ps42wb'),
+('4', 'Artículo 4', '26890vWrexa1xj780op'),
+('5', 'Artiíulo 5', 'MYzZSzU49wK3X7Gh');

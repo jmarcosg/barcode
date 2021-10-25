@@ -8,7 +8,7 @@ $abmArticulo = new AbmArticulo();
 $idArticulo = $datos['id_articulo'];
 
 $listaArticulo = $abmArticulo->buscar($datos);
-$objArticulo = $listaArticulo[$idArticulo];
+$objArticulo = $listaArticulo[$idArticulo - 1];
 ?>
 
 <div class="container">
