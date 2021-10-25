@@ -15,7 +15,7 @@ if (array_key_exists('tipo_codificacion', $datos) && is_null($datos['tipo_codifi
     die();
 }
 $codigo = $datos['codigo_articulo'];
-$tipoCodificacion = $datos['tipo_codificacion'];
+$tipoCodificacion = $datos['tipo_codificacion'] ?? "";
 
 $codigoBarra = new Picqer\Barcode\BarcodeGeneratorPNG();
 ?>
@@ -143,6 +143,11 @@ switch ($tipoCodificacion) {
         echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_PHARMA_CODE_TWO_TRACKS)) . '">';
         echo '<p>' . $codigo . '</p>';
         break;
+    default:
+        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_CODE_39)) . '">';
+        echo '<p>' . $codigo . '</p>';
+        break;
+
 }
 ?>
             </div>
