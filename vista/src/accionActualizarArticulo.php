@@ -4,8 +4,6 @@ include_once "../estructura/header.php";
 $datos = data_submitted();
 $abmArticulo = new AbmArticulo();
 
-print_r($datos);
-
 $articuloBuscado = ['id' => $datos['id_articulo']];
 
 $listaArticulos = $abmArticulo->buscar($articuloBuscado);

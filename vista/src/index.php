@@ -15,7 +15,7 @@ $listaArticulos = $abmArticulo->buscar(null);
                 <th scope='col' class='text-center'>Nombre</th>
                 <th scope='col' class='text-center'>Codigo</th>
                 <th scope='col' class='text-center'>Editar</th>
-                <th scope='col' class='text-center'>Tipo de Código</th>
+                <th scope='col' class='text-center'>Codificación</th>
                 <th scope='col' class='text-center'>Imprimir</th>
             </tr>
         </thead>
@@ -32,13 +32,13 @@ if (count($listaArticulos) > 0) {
         echo "<form method='post' action='actualizarArticulo.php'>
         <td class='text-center'>
             <input name='id_articulo' id='id_articulo' type='hidden' value='$id'>
-            <button class='btn btn-warning btn-sm' type='submit'><i class='bi bi-pencil-square'></i></i></button>
+            <button class='btn btn-warning btn-sm' type='submit' value='$id' name='id_articulo' id='id_articulo' role='button' formaction='actualizarArticulo.php'><i class='bi bi-pencil-square'></i></button>
         </td>
         </form>";
 
-        echo "<form method='post' action='verCodigoBarra.php'>
+        echo "<form method='post' action='verCodigoBarras.php' id='codificacion' name='codificacion'>
         <td class='text-center'>
-            <select class='form-select form-select-sm' aria-label='Default select example' required>
+            <select class='form-select form-select-sm' name='tipo_codificacion' id='tipo_codificacion' aria-label='.form-select-sm'>
                 <option disabled selected>Seleccione una codificación</option>
                 <option disabled>Más usados</option>
                 <option value='TYPE_CODE_128'>CODE 128</option>
@@ -52,7 +52,6 @@ if (count($listaArticulos) > 0) {
                 <option value='TYPE_STANDARD_2_5_CHECKSUM'>STANDARD 2 5 CHECKSUM</option>
                 <option value='TYPE_INTERLEAVED_2_5'>INTERLEAVED 2 5</option>
                 <option value='TYPE_INTERLEAVED_2_5_CHECKSUM'>INTERLEAVED 2 5 CHECKSUM</option>
-                <option value='TYPE_CODE_128'>CODE 128</option>
                 <option value='TYPE_CODE_128_A'>CODE 128 A</option>
                 <option value='TYPE_CODE_128_B'>CODE 128 B</option>
                 <option value='TYPE_CODE_128_C'>CODE 128 C</option>
