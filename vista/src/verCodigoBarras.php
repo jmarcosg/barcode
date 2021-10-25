@@ -24,7 +24,7 @@ $codigoBarra = new Picqer\Barcode\BarcodeGeneratorPNG();
     <div class="card">
         <h5 class="card-header">Código de barras generado</h5>
         <div class="card-body">
-            <div class="qrbox mt-3" style="text-align: center;">
+            <div class="qrbox mt-5" style="text-align: center;">
                 <?php
 switch ($tipoCodificacion) {
     case 'TYPE_CODE_39':
@@ -50,23 +50,39 @@ switch ($tipoCodificacion) {
     case 'TYPE_STANDARD_2_5':
         if (!is_numeric($codigo)) {
             echo "<h4>Esta codificacion solo admite números</h4>";
+            break;
         } else {
             echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_STANDARD_2_5)) . '">';
             echo '<p>' . $codigo . '</p>';
             break;
         }
     case 'TYPE_STANDARD_2_5_CHECKSUM':
-        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_STANDARD_2_5_CHECKSUM)) . '">';
-        echo '<p>' . $codigo . '</p>';
-        break;
+        if (!is_numeric($codigo)) {
+            echo "<h4>Esta codificacion solo admite números</h4>";
+            break;
+        } else {
+            echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_STANDARD_2_5_CHECKSUM)) . '">';
+            echo '<p>' . $codigo . '</p>';
+            break;
+        }
     case 'TYPE_INTERLEAVED_2_5':
-        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_INTERLEAVED_2_5)) . '">';
-        echo '<p>' . $codigo . '</p>';
-        break;
+        if (!is_numeric($codigo)) {
+            echo "<h4>Esta codificacion solo admite números</h4>";
+            break;
+        } else {
+            echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_INTERLEAVED_2_5)) . '">';
+            echo '<p>' . $codigo . '</p>';
+            break;
+        }
     case 'TYPE_INTERLEAVED_2_5_CHECKSUM':
-        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_INTERLEAVED_2_5_CHECKSUM)) . '">';
-        echo '<p>' . $codigo . '</p>';
-        break;
+        if (!is_numeric($codigo)) {
+            echo "<h4>Esta codificacion solo admite números</h4>";
+            break;
+        } else {
+            echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_INTERLEAVED_2_5_CHECKSUM)) . '">';
+            echo '<p>' . $codigo . '</p>';
+            break;
+        }
     case 'TYPE_CODE_128':
         echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_CODE_128)) . '">';
         echo '<p>' . $codigo . '</p>';
@@ -156,10 +172,9 @@ switch ($tipoCodificacion) {
 ?>
             </div>
 
-            <div class="text-center">
+            <div class="text-center mt-5">
                 <div class="btn-group">
                     <a href="index.php" class="btn btn-secondary">Volver</a>
-                    <a href="#" class="btn btn-primary">Descargar</a>
                 </div>
             </div>
         </div>

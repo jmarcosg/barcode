@@ -1,5 +1,6 @@
 <?php
 include_once "../estructura/header.php";
+$titulo = "Edición de artículo";
 
 $datos = data_submitted();
 $abmArticulo = new AbmArticulo();
