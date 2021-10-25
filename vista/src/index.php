@@ -41,37 +41,37 @@ if (count($listaArticulos) > 0) {
             <select class='form-select form-select-sm' name='tipo_codificacion' id='tipo_codificacion' aria-label='.form-select-sm' required>
                 <option disabled selected>Seleccione una codificación</option>
                 <option disabled>Más usados</option>
-                <option value='TYPE_CODE_128'>CODE 128</option>
-                <option value='TYPE_CODE_39'>CODE 39</option>
+                <option value='TYPE_CODE_39'>C39</option>
+                <option value='TYPE_CODE_128'>C128</option>
                 <option disabled>Otros</option>
-                <option value='TYPE_CODE_39_CHECKSUM'>CODE 39 CHECKSUM</option>
-                <option value='TYPE_CODE_39E'>CODE 39E</option>
-                <option value='TYPE_CODE_39E_CHECKSUM'>CODE 39E CHECKSUM</option>
-                <option value='TYPE_CODE_93'>CODE 93</option>
-                <option value='TYPE_STANDARD_2_5'>STANDARD 2 5</option>
-                <option value='TYPE_STANDARD_2_5_CHECKSUM'>STANDARD 2 5 CHECKSUM</option>
-                <option value='TYPE_INTERLEAVED_2_5'>INTERLEAVED 2 5</option>
-                <option value='TYPE_INTERLEAVED_2_5_CHECKSUM'>INTERLEAVED 2 5 CHECKSUM</option>
-                <option value='TYPE_CODE_128_A'>CODE 128 A</option>
-                <option value='TYPE_CODE_128_B'>CODE 128 B</option>
-                <option value='TYPE_CODE_128_C'>CODE 128 C</option>
-                <option value='TYPE_EAN_2'>EAN 2</option>
-                <option value='TYPE_EAN_5'>EAN 5</option>
-                <option value='TYPE_EAN_8'>EAN 8</option>
-                <option value='TYPE_EAN_13'>EAN 13</option>
-                <option value='TYPE_UPC_A'>UPC A</option>
-                <option value='TYPE_UPC_E'>UPC E</option>
-                <option value='TYPE_MSI'>MSI</option>
-                <option value='TYPE_MSI_CHECKSUM'>MSI CHECKSUM</option>
-                <option value='TYPE_POSTNET'>POSTNET</option>
-                <option value='TYPE_PLANET'>PLANET</option>
-                <option value='TYPE_RMS4CC'>RMS4CC</option>
-                <option value='TYPE_KIX'>KIX</option>
-                <option value='TYPE_IMB'>IMB</option>
+                <option value='TYPE_CODE_11'>C11</option>
+                <option value='TYPE_CODE_39_CHECKSUM'>C39+</option>
+                <option value='TYPE_CODE_39E'>C39E</option>
+                <option value='TYPE_CODE_39E_CHECKSUM'>C39E+</option>
+                <option value='TYPE_CODE_93'>C93</option>
+                <option value='TYPE_CODE_128_A'>C128A</option>
+                <option value='TYPE_CODE_128_B'>C128B</option>
+                <option value='TYPE_CODE_128_C'>C128C</option>
                 <option value='TYPE_CODABAR'>CODABAR</option>
-                <option value='TYPE_CODE_11'>CODE 11</option>
-                <option value='TYPE_PHARMA_CODE'>PHARMA CODE</option>
-                <option value='TYPE_PHARMA_CODE_TWO_TRACKS'>PHARMA CODE TWO TRACKS</option>
+                <option value='TYPE_EAN_2'>EAN2</option>
+                <option value='TYPE_EAN_5'>EAN5</option>
+                <option value='TYPE_EAN_8'>EAN8</option>
+                <option value='TYPE_EAN_13'>EAN13</option>
+                <option value='TYPE_INTERLEAVED_2_5'>I25</option>
+                <option value='TYPE_INTERLEAVED_2_5_CHECKSUM'>I25+</option>
+                <option value='TYPE_IMB'>IMB</option>
+                <option value='TYPE_KIX'>KIX</option>
+                <option value='TYPE_MSI'>MSI</option>
+                <option value='TYPE_MSI_CHECKSUM'>MSI+</option>
+                <option value='TYPE_PHARMA_CODE'>PHARMA</option>
+                <option value='TYPE_PHARMA_CODE_TWO_TRACKS'>PHARMA2T</option>
+                <option value='TYPE_PLANET'>PLANET</option>
+                <option value='TYPE_POSTNET'>POSTNET</option>
+                <option value='TYPE_RMS4CC'>RMS4CC</option>
+                <option value='TYPE_STANDARD_2_5'>S25</option>
+                <option value='TYPE_STANDARD_2_5_CHECKSUM'>S25+</option>
+                <option value='TYPE_UPC_A'>UPCA</option>
+                <option value='TYPE_UPC_E'>UPCE</option>
             </select>
         </td>";
 

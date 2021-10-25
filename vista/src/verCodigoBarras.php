@@ -48,9 +48,13 @@ switch ($tipoCodificacion) {
         echo '<p>' . $codigo . '</p>';
         break;
     case 'TYPE_STANDARD_2_5':
-        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_STANDARD_2_5)) . '">';
-        echo '<p>' . $codigo . '</p>';
-        break;
+        if (!is_numeric($codigo)) {
+            echo "<h4>Esta codificacion solo admite números</h4>";
+        } else {
+            echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_STANDARD_2_5)) . '">';
+            echo '<p>' . $codigo . '</p>';
+            break;
+        }
     case 'TYPE_STANDARD_2_5_CHECKSUM':
         echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_STANDARD_2_5_CHECKSUM)) . '">';
         echo '<p>' . $codigo . '</p>';
