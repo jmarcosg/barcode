@@ -32,7 +32,7 @@ if (count($listaArticulos) > 0) {
         echo "<form method='post' action='actualizarArticulo.php'>
         <td class='text-center'>
             <input name='id_articulo' id='id_articulo' type='hidden' value='$id'>
-            <button class='btn btn-warning btn-sm' type='submit'><i class='fas fa-user-edit'></i></button>
+            <button class='btn btn-warning btn-sm' type='submit'><i class='bi bi-pencil-square'></i></i></button>
         </td>
         </form>";
 
@@ -88,6 +88,10 @@ if (count($listaArticulos) > 0) {
 ?>
     </tbody>
     </table>
+
+    <div class="text-center">
+        <button class="btn btn-warning">Nuevo artículo</button>
+    </div>
     <?php
 if (isset($_GET['Message'])) {
     print '<script type="text/javascript">alert("' . $_GET['Message'] . '");</script>';
