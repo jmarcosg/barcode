@@ -13,7 +13,7 @@ class controlCodigoBarras
     {
         $valido = true;
 
-        if (preg_match('/^S{1}[0-9]+S{1}$/', $codigo)) {
+        if (!preg_match('/^[S]{1}[0-9]+[S]{1}$/', $codigo)) {
             $valido = false;
         }
 
@@ -27,6 +27,23 @@ class controlCodigoBarras
      * @return $valido
      */
     public function validarC39($codigo)
+    {
+        $valido = true;
+
+        if (count(str_split($codigo)) >= 127) {
+            $valido = false;
+        }
+
+        return $valido;
+    }
+
+    /**
+     * Verifica la codificacion C39
+     * Tiene que ser: Cualquier cantidad de caracteres menor a 127
+     * @param $codigo
+     * @return $valido
+     */
+    public function validarC39_CHECKSUM($codigo)
     {
         $valido = true;
 

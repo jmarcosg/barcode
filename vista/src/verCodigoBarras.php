@@ -49,7 +49,7 @@ switch ($tipoCodificacion) {
         }
         break;
     case 'TYPE_CODE_39_CHECKSUM':
-        $codigoValidado = $validador->validarC39E($codigo);
+        $codigoValidado = $validador->validarC39_CHECKSUM($codigo);
 
         if ($codigoValidado) {
             echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_CODE_39_CHECKSUM)) . '">';
@@ -59,16 +59,34 @@ switch ($tipoCodificacion) {
         }
         break;
     case 'TYPE_CODE_39E':
-        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_CODE_39E)) . '">';
-        echo '<p>' . $codigo . '</p>';
+        $codigoValidado = $validador->validarC39E($codigo);
+
+        if ($codigoValidado) {
+            echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_CODE_39E)) . '">';
+            echo '<p>' . $codigo . '</p>';
+        } else {
+            echo '<h4>Esta codificación solo admite menos de 127 caracteres</h4>';
+        }
         break;
     case 'TYPE_CODE_39E_CHECKSUM':
-        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_CODE_39E_CHECKSUM)) . '">';
-        echo '<p>' . $codigo . '</p>';
+        $codigoValidado = $validador->validarC39E_CHECKSUM($codigo);
+
+        if ($codigoValidado) {
+            echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_CODE_39E_CHECKSUM)) . '">';
+            echo '<p>' . $codigo . '</p>';
+        } else {
+            echo '<h4>Esta codificación solo admite menos de 127 caracteres</h4>';
+        }
         break;
     case 'TYPE_CODE_93':
-        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_CODE_93)) . '">';
-        echo '<p>' . $codigo . '</p>';
+        $codigoValidado = $validador->validarC93($codigo);
+
+        if ($codigoValidado) {
+            echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_CODE_93)) . '">';
+            echo '<p>' . $codigo . '</p>';
+        } else {
+            echo '<h4>Esta codificación solo admite menos de 127 caracteres</h4>';
+        }
         break;
     case 'TYPE_CODE_128':
         echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_CODE_128)) . '">';
