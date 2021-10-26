@@ -39,7 +39,7 @@ if (count($listaArticulos) > 0) {
         echo "<form method='post' action='verCodigoBarras.php' id='codificacion' name='codificacion'>
         <td class='text-center'>
             <select class='form-select form-select-sm' name='tipo_codificacion' id='tipo_codificacion' aria-label='.form-select-sm' required>
-                <option disabled selected>Seleccione una codificación (default: C39)</option>
+                <option disabled selected>Seleccione una codificación (default: C128)</option>
                 <option disabled>Más usados</option>
                 <option value='TYPE_CODE_39'>C39</option>
                 <option value='TYPE_CODE_128'>C128</option>

@@ -38,7 +38,7 @@ class controlCodigoBarras
     }
 
     /**
-     * Verifica la codificacion C39
+     * Verifica la codificacion C39+
      * Tiene que ser: Cualquier cantidad de caracteres menor a 127
      * @param $codigo
      * @return $valido
@@ -55,7 +55,7 @@ class controlCodigoBarras
     }
 
     /**
-     * Verifica la codificacion C39+
+     * Verifica la codificacion C39E
      * Tiene que ser: Cualquier cantidad de caracteres menor a 127
      * @param $codigo
      * @return $valido

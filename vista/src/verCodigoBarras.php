@@ -205,7 +205,7 @@ switch ($tipoCodificacion) {
         echo '<p>' . $codigo . '</p>';
         break;
     default:
-        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_CODE_39)) . '">';
+        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_CODE_128)) . '">';
         echo '<p>' . $codigo . '</p>';
         break;
 }
