@@ -11,10 +11,10 @@ class controlCodigoBarras
      */
     public function validarC11($codigo)
     {
-        $valido = false;
+        $valido = true;
 
         if (preg_match('/^S{1}[0-9]+S{1}$/', $codigo)) {
-            $valido = true;
+            $valido = false;
         }
 
         return $valido;
@@ -28,10 +28,10 @@ class controlCodigoBarras
      */
     public function validarC39($codigo)
     {
-        $valido = false;
+        $valido = true;
 
-        if (count($codigo) > 127) {
-            $valido = true;
+        if (count(str_split($codigo)) >= 127) {
+            $valido = false;
         }
 
         return $valido;
@@ -45,10 +45,10 @@ class controlCodigoBarras
      */
     public function validarC39E($codigo)
     {
-        $valido = false;
+        $valido = true;
 
-        if (count($codigo) > 127) {
-            $valido = true;
+        if (count(str_split($codigo)) >= 127) {
+            $valido = false;
         }
 
         return $valido;
@@ -62,10 +62,10 @@ class controlCodigoBarras
      */
     public function validarC39E_CHECKSUM($codigo)
     {
-        $valido = false;
+        $valido = true;
 
-        if (count($codigo) > 127) {
-            $valido = true;
+        if (count(str_split($codigo)) >= 127) {
+            $valido = false;
         }
 
         return $valido;
@@ -79,10 +79,10 @@ class controlCodigoBarras
      */
     public function validarC93($codigo)
     {
-        $valido = false;
+        $valido = true;
 
-        if (count($codigo) > 127) {
-            $valido = true;
+        if (count(str_split($codigo)) >= 127) {
+            $valido = false;
         }
 
         return $valido;
