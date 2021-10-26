@@ -105,4 +105,21 @@ class controlCodigoBarras
         return $valido;
     }
 
+    /**
+     * Verifica la codificacion CODABAR
+     * Tiene que ser: Cualquier cantidad de caracteres menor a 127
+     * @param $codigo
+     * @return $valido
+     */
+    public function validarCODABAR($codigo)
+    {
+        $valido = true;
+
+        if (count(str_split($codigo)) >= 127) {
+            $valido = false;
+        }
+
+        return $valido;
+    }
+
 }

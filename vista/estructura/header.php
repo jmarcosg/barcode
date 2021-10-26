@@ -39,7 +39,7 @@ include_once '../../configuracion.php';
 
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a class="dropdown-item" href="../src/convertirCodigo.php">Conversor</a></li>
-                                <li><a class="dropdown-item" href="../src">Listado de artículos</a></li>
+                                <li><a class="dropdown-item" href="../src/listarArticulos.php">Listado de artículos</a></li>
                             </ul>
                         </li>
                     </ul>
