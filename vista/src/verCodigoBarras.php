@@ -27,6 +27,15 @@ $codigoBarra = new Picqer\Barcode\BarcodeGeneratorPNG();
             <div class="qrbox mt-5" style="text-align: center;">
                 <?php
 switch ($tipoCodificacion) {
+    case 'TYPE_CODE_11':
+        $codigoValidado = validarC11($codigo);
+        if ($codigoValidado) {
+            echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_CODE_11)) . '">';
+            echo '<p>' . $codigo . '</p>';
+        } else {
+            echo '<h4>Codificación aceptada: SdigitosS</h4>';
+        }
+        break;
     case 'TYPE_CODE_39':
         echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_CODE_39)) . '">';
         echo '<p>' . $codigo . '</p>';
@@ -47,42 +56,6 @@ switch ($tipoCodificacion) {
         echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_CODE_93)) . '">';
         echo '<p>' . $codigo . '</p>';
         break;
-    case 'TYPE_STANDARD_2_5':
-        if (!is_numeric($codigo)) {
-            echo "<h4>Esta codificacion solo admite números</h4>";
-            break;
-        } else {
-            echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_STANDARD_2_5)) . '">';
-            echo '<p>' . $codigo . '</p>';
-            break;
-        }
-    case 'TYPE_STANDARD_2_5_CHECKSUM':
-        if (!is_numeric($codigo)) {
-            echo "<h4>Esta codificacion solo admite números</h4>";
-            break;
-        } else {
-            echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_STANDARD_2_5_CHECKSUM)) . '">';
-            echo '<p>' . $codigo . '</p>';
-            break;
-        }
-    case 'TYPE_INTERLEAVED_2_5':
-        if (!is_numeric($codigo)) {
-            echo "<h4>Esta codificacion solo admite números</h4>";
-            break;
-        } else {
-            echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_INTERLEAVED_2_5)) . '">';
-            echo '<p>' . $codigo . '</p>';
-            break;
-        }
-    case 'TYPE_INTERLEAVED_2_5_CHECKSUM':
-        if (!is_numeric($codigo)) {
-            echo "<h4>Esta codificacion solo admite números</h4>";
-            break;
-        } else {
-            echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_INTERLEAVED_2_5_CHECKSUM)) . '">';
-            echo '<p>' . $codigo . '</p>';
-            break;
-        }
     case 'TYPE_CODE_128':
         echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_CODE_128)) . '">';
         echo '<p>' . $codigo . '</p>';
@@ -97,6 +70,10 @@ switch ($tipoCodificacion) {
         break;
     case 'TYPE_CODE_128_C':
         echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_CODE_128_C)) . '">';
+        echo '<p>' . $codigo . '</p>';
+        break;
+    case 'TYPE_CODABAR':
+        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_CODABAR)) . '">';
         echo '<p>' . $codigo . '</p>';
         break;
     case 'TYPE_EAN_2':
@@ -115,12 +92,28 @@ switch ($tipoCodificacion) {
         echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_EAN_13)) . '">';
         echo '<p>' . $codigo . '</p>';
         break;
-    case 'TYPE_UPC_A':
-        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_UPC_A)) . '">';
+    case 'TYPE_INTERLEAVED_2_5':
+        if (!is_numeric($codigo)) {
+            echo "<h4>Esta codificacion solo admite números</h4>";
+        } else {
+            echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_INTERLEAVED_2_5)) . '">';
+            echo '<p>' . $codigo . '</p>';
+        }
+        break;
+    case 'TYPE_INTERLEAVED_2_5_CHECKSUM':
+        if (!is_numeric($codigo)) {
+            echo "<h4>Esta codificacion solo admite números</h4>";
+        } else {
+            echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_INTERLEAVED_2_5_CHECKSUM)) . '">';
+            echo '<p>' . $codigo . '</p>';
+        }
+        break;
+    case 'TYPE_IMB':
+        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_IMB)) . '">';
         echo '<p>' . $codigo . '</p>';
         break;
-    case 'TYPE_UPC_E':
-        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_UPC_E)) . '">';
+    case 'TYPE_KIX':
+        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_KIX)) . '">';
         echo '<p>' . $codigo . '</p>';
         break;
     case 'TYPE_MSI':
@@ -131,30 +124,6 @@ switch ($tipoCodificacion) {
         echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_MSI_CHECKSUM)) . '">';
         echo '<p>' . $codigo . '</p>';
         break;
-    case 'TYPE_POSTNET':
-        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_POSTNET)) . '">';
-        echo '<p>' . $codigo . '</p>';
-        break;
-    case 'TYPE_PLANET':
-        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_PLANET)) . '">';
-        echo '<p>' . $codigo . '</p>';
-        break;
-    case 'TYPE_KIX':
-        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_KIX)) . '">';
-        echo '<p>' . $codigo . '</p>';
-        break;
-    case 'TYPE_IMB':
-        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_IMB)) . '">';
-        echo '<p>' . $codigo . '</p>';
-        break;
-    case 'TYPE_CODABAR':
-        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_CODABAR)) . '">';
-        echo '<p>' . $codigo . '</p>';
-        break;
-    case 'TYPE_CODE_11':
-        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_CODE_11)) . '">';
-        echo '<p>' . $codigo . '</p>';
-        break;
     case 'TYPE_PHARMA_CODE':
         echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_PHARMA_CODE)) . '">';
         echo '<p>' . $codigo . '</p>';
@@ -163,11 +132,50 @@ switch ($tipoCodificacion) {
         echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_PHARMA_CODE_TWO_TRACKS)) . '">';
         echo '<p>' . $codigo . '</p>';
         break;
+    case 'TYPE_PLANET':
+        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_PLANET)) . '">';
+        echo '<p>' . $codigo . '</p>';
+        break;
+    case 'TYPE_POSTNET':
+        if (preg_match("/^[0-9]{5}$/", $codigo) || preg_match('/^[0-9]{5}(-[0-9]{4})?$/', $codigo)) {
+            echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_POSTNET)) . '">';
+            echo '<p>' . $codigo . '</p>';
+        } else {
+            echo '<h4>Esta codificación solo acepta ddddd o ddddd-dddd</h4>';
+        }
+        break;
+    case 'TYPE_RMS4CC':
+        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_RMS4CC)) . '">';
+        echo '<p>' . $codigo . '</p>';
+        break;
+    case 'TYPE_STANDARD_2_5':
+        if (!is_numeric($codigo)) {
+            echo "<h4>Esta codificacion solo admite números</h4>";
+        } else {
+            echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_STANDARD_2_5)) . '">';
+            echo '<p>' . $codigo . '</p>';
+        }
+        break;
+    case 'TYPE_STANDARD_2_5_CHECKSUM':
+        if (!is_numeric($codigo)) {
+            echo "<h4>Esta codificacion solo admite números</h4>";
+        } else {
+            echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_STANDARD_2_5_CHECKSUM)) . '">';
+            echo '<p>' . $codigo . '</p>';
+        }
+        break;
+    case 'TYPE_UPC_A':
+        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_UPC_A)) . '">';
+        echo '<p>' . $codigo . '</p>';
+        break;
+    case 'TYPE_UPC_E':
+        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_UPC_E)) . '">';
+        echo '<p>' . $codigo . '</p>';
+        break;
     default:
         echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_CODE_39)) . '">';
         echo '<p>' . $codigo . '</p>';
         break;
-
 }
 ?>
             </div>
