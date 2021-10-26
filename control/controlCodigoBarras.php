@@ -1,5 +1,5 @@
 <?php
-require '../vendor/autoload.php';
+// require '../vendor/autoload.php';
 
 class controlCodigoBarras
 {
@@ -14,6 +14,23 @@ class controlCodigoBarras
         $valido = false;
 
         if (preg_match('/^S{1}[0-9]+S{1}$/', $codigo)) {
+            $valido = true;
+        }
+
+        return $valido;
+    }
+
+    /**
+     * Verifica la codificacion C39
+     * Tiene que ser: Cualquier cantidad de caracteres menor a 127
+     * @param $codigo
+     * @return $valido
+     */
+    public function validarC39($codigo)
+    {
+        $valido = false;
+
+        if (count($codigo) > 127) {
             $valido = true;
         }
 
@@ -55,7 +72,7 @@ class controlCodigoBarras
     }
 
     /**
-     * Verifica la codificacion C39
+     * Verifica la codificacion C93
      * Tiene que ser: Cualquier cantidad de caracteres menor a 127
      * @param $codigo
      * @return $valido

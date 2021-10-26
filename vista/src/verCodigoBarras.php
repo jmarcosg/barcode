@@ -4,6 +4,7 @@ include_once '../estructura/header.php';
 require_once '../../vendor/autoload.php';
 
 $datos = data_submitted();
+$validador = new controlCodigoBarras();
 
 if (!$datos['codigo_articulo']) {
     header('Location: index.php');
@@ -28,21 +29,34 @@ $codigoBarra = new Picqer\Barcode\BarcodeGeneratorPNG();
                 <?php
 switch ($tipoCodificacion) {
     case 'TYPE_CODE_11':
-        $codigoValidado = validarC11($codigo);
+        $codigoValidado = $validador->validarC11($codigo);
+
         if ($codigoValidado) {
             echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_CODE_11)) . '">';
             echo '<p>' . $codigo . '</p>';
         } else {
-            echo '<h4>Codificación aceptada: SdigitosS</h4>';
+            echo '<h4>Esta codificacion solo admite el formato: SdigitosS</h4>';
         }
         break;
     case 'TYPE_CODE_39':
-        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_CODE_39)) . '">';
-        echo '<p>' . $codigo . '</p>';
+        $codigoValidado = $validador->validarC39($codigo);
+
+        if ($codigoValidado) {
+            echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_CODE_39)) . '">';
+            echo '<p>' . $codigo . '</p>';
+        } else {
+            echo '<h4>Esta codificación solo admite menos de 127 caracteres</h4>';
+        }
         break;
     case 'TYPE_CODE_39_CHECKSUM':
-        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_CODE_39_CHECKSUM)) . '">';
-        echo '<p>' . $codigo . '</p>';
+        $codigoValidado = $validador->validarC39E($codigo);
+
+        if ($codigoValidado) {
+            echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_CODE_39_CHECKSUM)) . '">';
+            echo '<p>' . $codigo . '</p>';
+        } else {
+            echo '<h4>Esta codificación solo admite menos de 127 caracteres</h4>';
+        }
         break;
     case 'TYPE_CODE_39E':
         echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_CODE_39E)) . '">';

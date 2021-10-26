@@ -33,7 +33,6 @@ spl_autoload_register(function ($clase) {
         $GLOBALS['ROOT'] . 'modelo/',
         $GLOBALS['ROOT'] . 'modelo/conector/',
         $GLOBALS['ROOT'] . 'control/',
-        $GLOBALS['ROOT'] . 'vendor/autoload.php',
     );
     //print_r($directorys) ;
     foreach ($directorys as $directory) {
