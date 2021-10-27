@@ -195,11 +195,11 @@ class articulo
         $base = new BaseDatos();
         $resp = false;
 
-        $sql = "INSERT INTO articulo(nombre, codigo)
-                VALUES ('" . $this->getNombre() . "','" . $this->getCodigo() . "')";
+        $sql = "INSERT INTO articulo(nombre, codigo) VALUES ('" . $this->getNombre() . "',  '" . $this->getCodigo() . "')";
 
         if ($base->Iniciar()) {
             if ($id = $base->Ejecutar($sql)) {
+                $this->setId($id);
                 $resp = true;
             } else {
                 $this->setmensajeoperacion("Articulo->insertar: " . $base->getError());

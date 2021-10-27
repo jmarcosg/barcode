@@ -5,12 +5,12 @@ class AbmArticulo
     public function cargarObjeto($parametro)
     {
         $articulo = null;
-
-        if (array_key_exists('id_articulo', $parametro) && array_key_exists('nombreArticuloNuevo', $parametro) && array_key_exists('codigoArticuloNuevo', $parametro)) {
+        // print_r($parametro);
+        if (array_key_exists('nombreArticuloNuevo', $parametro) && array_key_exists('codigoArticuloNuevo', $parametro)) {
             $articulo = new articulo();
 
             $articulo->setear(
-                $parametro['id_articulo'],
+                '',
                 $parametro['nombreArticuloNuevo'],
                 $parametro['codigoArticuloNuevo']
             );
@@ -47,8 +47,7 @@ class AbmArticulo
     {
         $respuesta = false;
         $objArticulo = $this->cargarObjeto($parametro);
-
-        if ($objArticulo != null and $objArticulo->insertar()) {
+        if ($objArticulo != null && $objArticulo->insertar()) {
             $respuesta = true;
         }
 
