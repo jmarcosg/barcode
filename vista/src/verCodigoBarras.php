@@ -35,7 +35,7 @@ switch ($tipoCodificacion) {
             echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_CODE_11)) . '">';
             echo '<p>' . $codigo . '</p>';
         } else {
-            echo '<h4>Esta codificacion solo admite el formato: SdigitosS</h4>';
+            echo '<h4>Esta codificacion solo admite el formato: S1234S</h4>';
         }
         break;
     case 'TYPE_CODE_39':
@@ -105,104 +105,204 @@ switch ($tipoCodificacion) {
         echo '<p>' . $codigo . '</p>';
         break;
     case 'TYPE_CODABAR':
-        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_CODABAR)) . '">';
-        echo '<p>' . $codigo . '</p>';
+        $codigoValidado = $validador->validarCODABAR($codigo);
+
+        if ($codigoValidado) {
+            echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_CODABAR)) . '">';
+            echo '<p>' . $codigo . '</p>';
+        } else {
+            echo '<h4>Esta codificación solo admite hasta 16 caracteres y en formato "123456A"</h4>';
+        }
         break;
     case 'TYPE_EAN_2':
-        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_EAN_2)) . '">';
-        echo '<p>' . $codigo . '</p>';
+        $codigoValidado = $validador->validarEAN($codigo);
+
+        if ($codigoValidado) {
+            echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_EAN_2)) . '">';
+            echo '<p>' . $codigo . '</p>';
+        } else {
+            echo '<h4>Esta codificación solo admite hasta 55 caracteres y solo números</h4>';
+        }
         break;
     case 'TYPE_EAN_5':
-        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_EAN_5)) . '">';
-        echo '<p>' . $codigo . '</p>';
+        $codigoValidado = $validador->validarEAN($codigo);
+
+        if ($codigoValidado) {
+            echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_EAN_5)) . '">';
+            echo '<p>' . $codigo . '</p>';
+        } else {
+            echo '<h4>Esta codificación solo admite hasta 55 caracteres y solo números</h4>';
+        }
         break;
     case 'TYPE_EAN_8':
-        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_EAN_8)) . '">';
-        echo '<p>' . $codigo . '</p>';
+        $codigoValidado = $validador->validarEAN($codigo);
+
+        if ($codigoValidado) {
+            echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_EAN_8)) . '">';
+            echo '<p>' . $codigo . '</p>';
+        } else {
+            echo '<h4>Esta codificación solo admite hasta 55 caracteres y solo números</h4>';
+        }
         break;
     case 'TYPE_EAN_13':
-        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_EAN_13)) . '">';
-        echo '<p>' . $codigo . '</p>';
+        $codigoValidado = $validador->validarEAN($codigo);
+
+        if ($codigoValidado) {
+            echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_EAN_13)) . '">';
+            echo '<p>' . $codigo . '</p>';
+        } else {
+            echo '<h4>Esta codificación solo admite hasta 55 caracteres y solo números</h4>';
+        }
         break;
     case 'TYPE_INTERLEAVED_2_5':
-        if (!is_numeric($codigo)) {
-            echo "<h4>Esta codificacion solo admite números</h4>";
-        } else {
+        $codigoValidado = $validador->validarINTERLEAVED($codigo);
+
+        if ($codigoValidado) {
             echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_INTERLEAVED_2_5)) . '">';
             echo '<p>' . $codigo . '</p>';
+        } else {
+            echo '<h4>Esta codificación solo admite números</h4>';
         }
         break;
     case 'TYPE_INTERLEAVED_2_5_CHECKSUM':
-        if (!is_numeric($codigo)) {
-            echo "<h4>Esta codificacion solo admite números</h4>";
-        } else {
+        $codigoValidado = $validador->validarINTERLEAVED($codigo);
+
+        if ($codigoValidado) {
             echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_INTERLEAVED_2_5_CHECKSUM)) . '">';
             echo '<p>' . $codigo . '</p>';
+        } else {
+            echo '<h4>Esta codificación solo admite números</h4>';
         }
         break;
     case 'TYPE_IMB':
-        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_IMB)) . '">';
-        echo '<p>' . $codigo . '</p>';
+        $codigoValidado = $validador->validarIMB($codigo);
+
+        if ($codigoValidado) {
+            echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_IMB)) . '">';
+            echo '<p>' . $codigo . '</p>';
+        } else {
+            echo '<h4>Esta codificación solo admite números y hasta 31 caracteres</h4>';
+        }
         break;
     case 'TYPE_KIX':
-        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_KIX)) . '">';
-        echo '<p>' . $codigo . '</p>';
+        $codigoValidado = $validador->validarKIX($codigo);
+
+        if ($codigoValidado) {
+            echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_KIX)) . '">';
+            echo '<p>' . $codigo . '</p>';
+        } else {
+            echo '<h4>Esta codificación solo admite el formato: "1230AA12345XHUISET"</h4>';
+        }
         break;
     case 'TYPE_MSI':
-        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_MSI)) . '">';
-        echo '<p>' . $codigo . '</p>';
+        $codigoValidado = $validador->validarMSI($codigo);
+
+        if ($codigoValidado) {
+            echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_MSI)) . '">';
+            echo '<p>' . $codigo . '</p>';
+        } else {
+            echo '<h4>Esta codificación solo admite números</h4>';
+        }
         break;
     case 'TYPE_MSI_CHECKSUM':
-        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_MSI_CHECKSUM)) . '">';
-        echo '<p>' . $codigo . '</p>';
+        $codigoValidado = $validador->validarMSI($codigo);
+
+        if ($codigoValidado) {
+            echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_MSI_CHECKSUM)) . '">';
+            echo '<p>' . $codigo . '</p>';
+        } else {
+            echo '<h4>Esta codificación solo admite números</h4>';
+        }
         break;
     case 'TYPE_PHARMA_CODE':
-        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_PHARMA_CODE)) . '">';
-        echo '<p>' . $codigo . '</p>';
+        $codigoValidado = $validador->validarPHARMA($codigo);
+
+        if ($codigoValidado) {
+            echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_PHARMA_CODE)) . '">';
+            echo '<p>' . $codigo . '</p>';
+        } else {
+            echo '<h4>Esta codificación solo admite números y entre 3-131070 caracteres</h4>';
+        }
         break;
     case 'TYPE_PHARMA_CODE_TWO_TRACKS':
-        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_PHARMA_CODE_TWO_TRACKS)) . '">';
-        echo '<p>' . $codigo . '</p>';
+        $codigoValidado = $validador->validarPHARMA2T($codigo);
+
+        if ($codigoValidado) {
+            echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_PHARMA_CODE_TWO_TRACKS)) . '">';
+            echo '<p>' . $codigo . '</p>';
+        } else {
+            echo '<h4>Esta codificación solo admite números y entre 3-64570080 caracteres</h4>';
+        }
         break;
     case 'TYPE_PLANET':
-        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_PLANET)) . '">';
-        echo '<p>' . $codigo . '</p>';
+        $codigoValidado = $validador->validarPLANET($codigo);
+
+        if ($codigoValidado) {
+            echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_PLANET)) . '">';
+            echo '<p>' . $codigo . '</p>';
+        } else {
+            echo '<h4>Esta codificación solo admite números y entre 12-14 caracteres</h4>';
+        }
         break;
     case 'TYPE_POSTNET':
-        if (preg_match("/^[0-9]{5}$/", $codigo) || preg_match('/^[0-9]{5}(-[0-9]{4})?$/', $codigo)) {
+        $codigoValidado = $validador->validarPOSTNET($codigo);
+
+        if ($codigoValidado) {
             echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_POSTNET)) . '">';
             echo '<p>' . $codigo . '</p>';
         } else {
-            echo '<h4>Esta codificación solo acepta ddddd o ddddd-dddd</h4>';
+            echo '<h4>Esta codificación solo admite formato: "12095" o "12095-3467"</h4>';
         }
         break;
     case 'TYPE_RMS4CC':
-        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_RMS4CC)) . '">';
-        echo '<p>' . $codigo . '</p>';
+        $codigoValidado = $validador->validarRMS4CC($codigo);
+
+        if ($codigoValidado) {
+            echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_RMS4CC)) . '">';
+            echo '<p>' . $codigo . '</p>';
+        } else {
+            echo '<h4>Esta codificación solo admite formato: "(12095ABCDZ)" y hasta 36 caracteres</h4>';
+        }
         break;
     case 'TYPE_STANDARD_2_5':
-        if (!is_numeric($codigo)) {
-            echo "<h4>Esta codificacion solo admite números</h4>";
-        } else {
+        $codigoValidado = $validador->validarSTANDARD($codigo);
+
+        if ($codigoValidado) {
             echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_STANDARD_2_5)) . '">';
             echo '<p>' . $codigo . '</p>';
+        } else {
+            echo '<h4>Esta codificación solo admite numeros</h4>';
         }
         break;
     case 'TYPE_STANDARD_2_5_CHECKSUM':
-        if (!is_numeric($codigo)) {
-            echo "<h4>Esta codificacion solo admite números</h4>";
-        } else {
+        $codigoValidado = $validador->validarSTANDARD($codigo);
+
+        if ($codigoValidado) {
             echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_STANDARD_2_5_CHECKSUM)) . '">';
             echo '<p>' . $codigo . '</p>';
+        } else {
+            echo '<h4>Esta codificación solo admite numeros</h4>';
         }
         break;
     case 'TYPE_UPC_A':
-        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_UPC_A)) . '">';
-        echo '<p>' . $codigo . '</p>';
+        $codigoValidado = $validador->validarUPC($codigo);
+
+        if ($codigoValidado) {
+            echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_UPC_A)) . '">';
+            echo '<p>' . $codigo . '</p>';
+        } else {
+            echo '<h4>Esta codificación solo admite numeros</h4>';
+        }
         break;
     case 'TYPE_UPC_E':
-        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_UPC_E)) . '">';
-        echo '<p>' . $codigo . '</p>';
+        $codigoValidado = $validador->validarUPC($codigo);
+
+        if ($codigoValidado) {
+            echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_UPC_E)) . '">';
+            echo '<p>' . $codigo . '</p>';
+        } else {
+            echo '<h4>Esta codificación solo admite numeros</h4>';
+        }
         break;
     default:
         echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_CODE_128)) . '">';
@@ -214,7 +314,7 @@ switch ($tipoCodificacion) {
 
             <div class="text-center mt-5">
                 <div class="btn-group">
-                    <a href="index.php" class="btn btn-secondary">Volver</a>
+                    <a href="listarArticulos.php" class="btn btn-secondary">Volver</a>
                 </div>
             </div>
         </div>

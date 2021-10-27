@@ -13,8 +13,8 @@ $modificado = $abmArticulo->modificar($datos);
 
 if ($modificado) {
     $message = "Modificacion exitosa";
-    header('Location: index.php?Message=' . urlencode($message));
+    header('Location: listarArticulos.php?Message=' . urlencode($message));
 } else {
     $message = "Modificacion erronea";
-    header('Location: index.php?Message=' . urlencode($message));
+    header('Location: listarArticulos.php?Message=' . urlencode($message));
 }
