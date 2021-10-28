@@ -38,9 +38,13 @@ include_once '../../configuracion.php';
                             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Implementación</a>
 
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="../src/convertirCodigo.php">Conversor</a></li>
-                                <li><a class="dropdown-item" href="../src/listarArticulos.php">Listado de artículos</a></li>
+                                <li><a class="dropdown-item" href="../pages/convertirCodigo.php">Conversor</a></li>
+                                <li><a class="dropdown-item" href="../pages/listarArticulos.php">Listado de artículos</a></li>
                             </ul>
+                        </li>
+
+                        <li>
+                            <a class="nav-link" href="../pages/informacion.php" role="button">Información</a>
                         </li>
                     </ul>
                 </div>

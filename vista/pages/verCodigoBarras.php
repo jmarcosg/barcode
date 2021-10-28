@@ -6,7 +6,7 @@ require_once '../../vendor/autoload.php';
 $datos = data_submitted();
 $validador = new controlCodigoBarras();
 
-if (!$datos['codigo_articulo']) {
+if (!$datos['codigo']) {
     header('Location: index.php');
     die();
 }
@@ -15,7 +15,7 @@ if (array_key_exists('tipo_codificacion', $datos) && is_null($datos['tipo_codifi
     header('Location: index.php');
     die();
 }
-$codigo = $datos['codigo_articulo'];
+$codigo = $datos['codigo'];
 $tipoCodificacion = $datos['tipo_codificacion'] ?? "";
 
 $codigoBarra = new Picqer\Barcode\BarcodeGeneratorPNG();

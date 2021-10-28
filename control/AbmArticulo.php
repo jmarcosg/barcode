@@ -6,13 +6,13 @@ class AbmArticulo
     {
         $articulo = null;
         // print_r($parametro);
-        if (array_key_exists('nombreArticuloNuevo', $parametro) && array_key_exists('codigoArticuloNuevo', $parametro)) {
+        if (array_key_exists('nombre', $parametro) && array_key_exists('codigo', $parametro)) {
             $articulo = new articulo();
 
             $articulo->setear(
-                '',
-                $parametro['nombreArticuloNuevo'],
-                $parametro['codigoArticuloNuevo']
+                $parametro['id'],
+                $parametro['nombre'],
+                $parametro['codigo']
             );
         }
 

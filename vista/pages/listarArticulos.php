@@ -21,22 +21,22 @@ $listaArticulos = $abmArticulo->buscar(null);
         </thead>
         <tbody>
             <?php
-            if (count($listaArticulos) > 0) {
-                foreach ($listaArticulos as $articulo) {
-                    $id = $articulo->getId();
-                    echo "<tr>
+if (count($listaArticulos) > 0) {
+    foreach ($listaArticulos as $articulo) {
+        $id = $articulo->getId();
+        echo "<tr>
                         <td class='text-center'>{$articulo->getId()}</td>
                         <td class='text-center'>{$articulo->getNombre()}</td>
                         <td class='text-center'>{$articulo->getCodigo()}</td>";
 
-                    echo "<form method='post' action='actualizarArticulo.php'>
+        echo "<form method='post' action='actualizarArticulo.php'>
                             <td class='text-center'>
-                            <input name='id_articulo' id='id_articulo' type='hidden' value='$id'>
-                            <button class='btn btn-warning btn-sm' type='submit' value='$id' name='id_articulo' id='id_articulo' role='button' formaction='actualizarArticulo.php'><i class='bi bi-pencil-square'></i></button>
+                            <input name='id' id='id' type='hidden' value='$id'>
+                            <button class='btn btn-warning btn-sm' type='submit' value='$id' name='id' id='id' role='button' formaction='actualizarArticulo.php'><i class='bi bi-pencil-square'></i></button>
                             </td>
                         </form>";
 
-                    echo "<form method='post' action='verCodigoBarras.php' id='codificacion' name='codificacion'>
+        echo "<form method='post' action='verCodigoBarras.php' id='codificacion' name='codificacion'>
                             <td class='text-center'>
                             <select class='form-select form-select-sm' name='tipo_codificacion' id='tipo_codificacion' aria-label='.form-select-sm' required>
                                 <option disabled selected>Seleccione una codificación (default: C128)</option>
@@ -75,28 +75,26 @@ $listaArticulos = $abmArticulo->buscar(null);
                             </select>
                             </td>";
 
-                    echo "<td class='text-center'>
-                            <input name='codigo_articulo' id='codigo_articulo' type='hidden' value='{$articulo->getCodigo()}'>
+        echo "<td class='text-center'>
+                            <input name='codigo' id='codigo' type='hidden' value='{$articulo->getCodigo()}'>
                             <button class='btn btn-warning btn-sm' type='submit'><i class='fas fa-barcode'></i></button>
                         </td>
-                        </form>";
+                        </form></tr>";
+    }
+}
 
-                    echo "</tr>";
-                }
-            }
-
-            ?>
+?>
         </tbody>
     </table>
 
     <div class="text-center">
-        <a href="nuevoArticulo.php"><button class="btn btn-warning">Nuevo Articulo</button></a>
+        <a href="nuevoArticulo.php"><button class="btn btn-warning"><b>Nuevo Articulo</b></button></a>
     </div>
     <?php
-    if (isset($_GET['Message'])) {
-        print '<script type="text/javascript">alert("' . $_GET['Message'] . '");</script>';
-    }
-    ?>
+if (isset($_GET['Message'])) {
+    print '<script type="text/javascript">alert("' . $_GET['Message'] . '");</script>';
+}
+?>
 </div>
 
 <?php
