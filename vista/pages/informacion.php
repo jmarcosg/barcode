@@ -898,7 +898,7 @@ include_once '../estructura/header.php';
       </div>
     </div>
 
-    <div class="accordion-item">
+    <div class="accordion-item mb-3">
       <h2 class="accordion-header" id="heading17">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse17" aria-expanded="true" aria-controls="collapse17">
           <b>Standard 2 of 5</b>
