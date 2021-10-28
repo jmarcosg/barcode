@@ -13,7 +13,11 @@ include_once '../estructura/header.php';
       </h2>
       <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1" data-bs-parent="#accordionBarcodes">
         <div class="accordion-body">
-          <strong>Code 11, o también conocido como USD-8,</strong> es una simbologia discreta y de alta densidad usada principalmente para el etiquetado de equipamiento de telecomunicaciones. Fue inventado por David Allais en Intermec Corporation en el año 1977.
+          <p><strong>Code 11, o también conocido como USD-8,</strong> es una simbologia discreta y de alta densidad usada principalmente para el etiquetado de equipamiento de telecomunicaciones. Fue inventado por David Allais en Intermec Corporation en el año 1977.</p>
+
+          <div class="text-center">
+            <img src="../img/Code11.gif" alt="Code 11 barcode">
+          </div>
 
           <h5 class="mt-3">Estructura del Símbolo</h5>
           <ul>
@@ -46,6 +50,10 @@ include_once '../estructura/header.php';
 
           <p>Code 39 está definido en la norma ISO/IEC 16388 <i>Information technology - Automatic identification and data capture techniques - Code 39 bar code symbology specification.</i></p>
 
+          <div class="text-center">
+            <img src="../img/Code39FullASCII.gif" alt="Code 39 - Full ASCII barcode">
+          </div>
+
           <h5 class="mt-3">Estructura del Símbolo</h5>
           <ul>
             El símbolo está compuesto por los siguentes elementos:
@@ -76,6 +84,10 @@ include_once '../estructura/header.php';
           </ul>
           <p>Si se necesitan caracteres adicionales, el Code 39 - Full ASCII habilita la codificación de los 128 caracteres del conjunto ASCII.</p>
 
+          <div class="text-center">
+            <img src="../img/code39fullascii_table.png" alt="ASCII Table">
+          </div>
+
           <h5 class="mt-3">Dígito de verificación</h5>
           <p>Code 39 - Regular permite la utilización de un dígito opcional de verificación basado en el algoritmo modulo-43.</p>
 
@@ -100,6 +112,10 @@ include_once '../estructura/header.php';
           <strong>Code 93</strong> es una simbología alfanumérica de longitud variable que fue desarrollada en 1982 y es matenida por Intermec Corporation. Combina características de Code 39 - Full ASCII y de GS1-128 en un solo lenguaje de código de barras que tiene una densidad muy alta.
 
           <p>Code 93 se define en AIM-BC5-2000 <i>Uniform Symbology Specification - Code 93.</i></p>
+
+          <div class="text-center">
+            <img src="../img/Code93.gif" alt="Code 93 barcode">
+          </div>
 
           <h5 class="mt-3">Estructura del Símbolo</h5>
           <ul>
@@ -154,6 +170,10 @@ include_once '../estructura/header.php';
           <p>El uso más común de Code 128 es en ciertas etiquetas de empaquetado, definidas primeramente por GS1 en el estandar de códigos de barra GS1-128.</p>
 
           <p>Code 128 está definido en la norma ISO/IEC 15417 <i>Information technology - Automatic identification and data capture techniques - Code 128 bar code symbology specification.</i></p>
+
+          <div class="text-center">
+            <img src="../img/Code128.gif" alt="Code 128 barcode">
+          </div>
 
           <h5 class="mt-3">Estructura del Símbolo</h5>
           <ul>
@@ -217,6 +237,10 @@ include_once '../estructura/header.php';
           <p>Codabar se define en AIM-BC3-2000 <i>Uniform Symbology Specification - Codabar.</i></p>
 
           <p>Codabar también, a veces, es nombrado USD 4, Code 27, 2 of 7 Code o Monarch. Es conocido como NW-7 en Japón.</p>
+
+          <div class="text-center">
+            <img src="../img/Codabar.gif" alt="Codabar barcode">
+          </div>
 
           <h5 class="mt-3">Estructura del Símbolo</h5>
           <ul>
@@ -286,6 +310,10 @@ include_once '../estructura/header.php';
 
           <p>EAN-8 está definido en la norma ISO/IEC 15420 <i>Information technology - Automatic identification and data capture techniques - EAN/UPC bar code symbology specification.</i> La implementación GS1 esta definida en <i>GS1 General Specifications.</i></p>
 
+          <div class="text-center">
+            <img src="../img/EAN8.gif" alt="EAN8 barcode">
+          </div>
+
           <h5 class="mt-3">Estructura del Símbolo</h5>
           <ul>
             El símbolo está compuesto por los siguentes elementos:
@@ -325,7 +353,7 @@ include_once '../estructura/header.php';
 
           <p>Las barras para estos caracteres son más largas que las borras en el resto del símbolo y a veces son nombradas "barras de seguridad".</p>
 
-          <h5 class="mt-3">Conjunto de caracteres</h5>>
+          <h5 class="mt-3">Conjunto de caracteres</h5>
           <p>Esta simbología soporta todos los caracteres númericos (0-9).</p>
 
           <h5 class="mt-3">Dígito de verificación</h5>
@@ -357,6 +385,10 @@ include_once '../estructura/header.php';
           <p>EAN-13 es un super-conjunto de UPC-A. lo cual significa que cualquier sistema que pueda leer EAN-13 puede leer UPC-A. Un símbolo UPC-A que fue creado en Estados Unidos puede ser transformado en un símbolo EAN-13 concatenandole un 0 al principio.</p>
 
           <p>EAN-13 está definido en la norma ISO/IEC 15420 <i>Information technology - Automatic identification and data capture techniques - EAN/UPC bar code symbology specification.</i> La implementación GS1 esta definida en <i>GS1 General Specifications.</i></p>
+
+          <div class="text-center">
+            <img src="../img/EAN13.gif" alt="EAN13 barcode">
+          </div>
 
           <h5 class="mt-3">Estructura del Símbolo</h5>
           <ul>
@@ -397,7 +429,7 @@ include_once '../estructura/header.php';
 
           <p>Las barras para estos caracteres son más largas que las borras en el resto del símbolo y a veces son nombradas "barras de seguridad".</p>
 
-          <h5 class="mt-3">Conjunto de caracteres</h5>>
+          <h5 class="mt-3">Conjunto de caracteres</h5>
           <p>Esta simbología soporta todos los caracteres númericos (0-9).</p>
 
           <h5 class="mt-3">Dígito de verificación</h5>
@@ -431,6 +463,10 @@ include_once '../estructura/header.php';
 
           <p>Interleaved 2 of 5 está definido en la norma ISO/IEC 16390 <i>Information technology - Automatic identification and data capture techniques - Interleaved 2 of 5 bar code symbology specification.</i> Para información acerca de la implementación GS1 de ITF-14, ver el documento<i>GS1 General Specifications.</i></p>
 
+          <div class="text-center">
+            <img src="../img/Interleaved2of5.gif" alt="Interleaved 2 of 5 barcode">
+          </div>
+
           <h5 class="mt-3">Estructura del Símbolo</h5>
           <ul>
             El símbolo está compuesto por los siguentes elementos:
@@ -451,7 +487,7 @@ include_once '../estructura/header.php';
 
           <p>"Interleaved 2 of 5" no contiene espacios entre-caracteres.</p>
 
-          <h5 class="mt-3">Conjunto de caracteres</h5>>
+          <h5 class="mt-3">Conjunto de caracteres</h5>
           <p>Esta simbología soporta todos los caracteres númericos (0-9).</p>
 
           <p>Aunque este código de barras es mucho más denso que "Code 39", la seguridad teórica de la información codificada "I25" no es tan densa. Por esta razón, se sugiere que siempre se utilice "I25" con el dígito opcional de verificación o estandarizar los códigos de barras para la longitud de un caracter.</p>
@@ -491,6 +527,10 @@ include_once '../estructura/header.php';
 
           <p>IMB está definido en la norma USPS-B-3200 <i>Intelligent Mail Barcode (4-State Customer Barcode).</i></p>
 
+          <div class="text-center">
+            <img src="../img/USPS_4_State.gif" alt="IMB barcode">
+          </div>
+
           <h5 class="mt-3">Estructura del Símbolo</h5>
           <ul>
             El símbolo está compuesto por los siguentes elementos:
@@ -517,6 +557,10 @@ include_once '../estructura/header.php';
               <li>F(full bar)</li>
             </ul>
           </p>
+
+          <div class="text-center">
+            <img src="../img/USPS_Structure.gif" alt="IMB structure">
+          </div>
 
           <h5 class="mt-3">Conjunto de caracteres</h5>
           <p>Esta simbología soporta todos los caracteres númericos (0-9).</p>
@@ -552,6 +596,10 @@ include_once '../estructura/header.php';
 
           <p>Kix 4-State CUstomer Code está definido en <i>De KIX® van TNT Post - Aanwijzingen voor het gebruik - Technische specificaties.</i></p>
 
+          <div class="text-center">
+            <img src="../img/kix1.gif" alt="KIX barcode">
+          </div>
+
           <h5 class="mt-3">Estructura del Símbolo</h5>
           <ul>
             El símbolo está compuesto por los siguentes elementos:
@@ -569,6 +617,10 @@ include_once '../estructura/header.php';
             <li>Zona de inicio con espaciado</li>
           </ul>
 
+          <div class="text-center">
+            <img src="../img/KixStructure.gif" alt="KIX barcode structure">
+          </div>
+
           <p>Cada caracter símbolo está compuesto de cuatro barras separadas. El termino "4-state" deriva del hecho de que cada barra en esta simbología está uno de los cuatro estados. Los nombres de los cuatro estados son:
             <ul>
               <li>T(tracker)</li>
@@ -577,6 +629,10 @@ include_once '../estructura/header.php';
               <li>F(full bar)</li>
             </ul>
           </p>
+
+          <div class="text-center">
+            <img src="../img/USPS_Structure.gif" alt="KIX structure">
+          </div>
 
           <h5 class="mt-3">Conjunto de caracteres</h5>
           <p>Esta simbología soporta los siguentes caracteres alfanuméricos:
@@ -608,6 +664,10 @@ include_once '../estructura/header.php';
 
           <p>MSI Plessey es actualmente mantenido por Symbol Technologies, Inc.</p>
 
+          <div class="text-center">
+            <img src="../img/MSIPlessey.gif" alt="MSI barcode">
+          </div>
+
           <h5 class="mt-3">Estructura del Símbolo</h5>
           <ul>
             El símbolo está compuesto por los siguentes elementos:
@@ -638,7 +698,7 @@ include_once '../estructura/header.php';
     <div class="accordion-item">
       <h2 class="accordion-header" id="heading12">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12" aria-expanded="true" aria-controls="collapse12">
-          <b>PHARMA</b>
+          <b>PHARMA - One-Track</b>
         </button>
       </h2>
       <div id="collapse12" class="accordion-collapse collapse" aria-labelledby="heading12" data-bs-parent="#accordionBarcodes">
@@ -648,6 +708,10 @@ include_once '../estructura/header.php';
           <p>PHARMA-CODE es tipicamente utilizado para control de inventario en una farmacia y como verficación de seguridad, asegurando así que los materiales de empaquetado y contenidos corresponden y son correctos. No se lo utiliza para ventas. Para aplicaciones de espacio reducido existe una versión miniatura.</p>
 
           <p>PHARMA-CODE is definido en <i>Laetus PHARMA-CODE Guide.</i> La división Laetus de Roamco Phartechnik GmbH en Asbach, Alemania es dueña de la marca PHARMA-CODE.</p>
+
+          <div class="text-center">
+            <img src="../img/Pharmacode1Track.gif" alt="PHARMA1T barcode">
+          </div>
 
           <h5 class="mt-3">Estructura del Símbolo</h5>
           <ul>
@@ -676,7 +740,7 @@ include_once '../estructura/header.php';
     <div class="accordion-item">
       <h2 class="accordion-header" id="heading13">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse13" aria-expanded="true" aria-controls="collapse13">
-          <b>PHARMA</b>
+          <b>PHARMA - Two-Track</b>
         </button>
       </h2>
       <div id="collapse13" class="accordion-collapse collapse" aria-labelledby="heading13" data-bs-parent="#accordionBarcodes">
@@ -686,6 +750,10 @@ include_once '../estructura/header.php';
           <p>PHARMA-CODE es tipicamente utilizado para control de inventario en una farmacia y como verficación de seguridad, asegurando así que los materiales de empaquetado y contenidos corresponden y son correctos. No se lo utiliza para ventas.</p>
 
           <p>PHARMA-CODE is definido en <i>Laetus PHARMA-CODE Guide.</i> La división Laetus de Roamco Phartechnik GmbH en Asbach, Alemania es dueña de la marca PHARMA-CODE.</p>
+
+          <div class="text-center">
+            <img src="../img/Pharmacode2Track.gif" alt="PHARMA2T barcode">
+          </div>
 
           <h5 class="mt-3">Estructura del Símbolo</h5>
           <ul>
@@ -718,6 +786,10 @@ include_once '../estructura/header.php';
           <p>En 2009, POSTNET fue supercedido por USPS Intelligent Mail Barcode (IMB), y PLANET fue supercedido por IMB en 2013.</p>
 
           <p>El Servicio de Mensajería de Estados Unidos ofrece un servicio de suscripción a mensajeros, llamado "Confirm", que mejora el proceso de seguimiento de correo. PLANET es uno de los componentes del sistema Confirm. Hay disponible dos tipos de servicios: "Destination Confirm" (el cual genera un correo que procesa información de un correo que sale) y "Origin Confirm" (el cual genera información de un correo que entra). Los mensajeros pueden utilizar uno o ambos servicios.</p>
+
+          <div class="text-center">
+            <img src="../img/USPSPlanet.gif" alt="PLANET barcode">
+          </div>
 
           <h5 class="mt-3">Estructura del Símbolo</h5>
           <p>El símbolo está compuesto por los siguentes elementos, dependiendo de cual tipo de servicio de Confirm se utilice:</p>
@@ -761,7 +833,7 @@ include_once '../estructura/header.php';
     <div class="accordion-item">
       <h2 class="accordion-header" id="heading15">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse15" aria-expanded="true" aria-controls="collapse15">
-          <b>PLANET</b>
+          <b>POSTNET</b>
         </button>
       </h2>
       <div id="collapse15" class="accordion-collapse collapse" aria-labelledby="heading15" data-bs-parent="#accordionBarcodes">
@@ -773,6 +845,10 @@ include_once '../estructura/header.php';
           <p>El símbolo puede representar un Código Posta de cinco dígitos, nueve dígitos (ZIP+4), u 11 dígitos de punto de entrega (DPBC). El Servicio de Mensajería de Estados Unidos desarrolló DPBC unicamente para identificar cada uno de los 115 millones de puntos en el país. Su utilización se vio muy reducida cuando los mensajeros organizaban el correo previamente a la entrega.</p>
 
           <p>POSTNET está definido en el documento <i>USPS Designing Letter and Reply Mail.</i></p>
+
+          <div class="text-center">
+            <img src="../img/USPOSTNET.gif" alt="POSTNET barcode">
+          </div>
 
           <h5 class="mt-3">Estructura del Símbolo</h5>
           <p>El símbolo está compuesto por los siguentes elementos:</p>
@@ -845,6 +921,10 @@ include_once '../estructura/header.php';
 
           <p>RMS4CC está definido en el documento de la Mensajería de la Realeza <i>Mailsort User Guide: Mailsort 700.</i></p>
 
+          <div class="text-center">
+            <img src="../img/RoyalMail.gif" alt="RMS4CC barcode">
+          </div>
+
           <h5 class="mt-3">Estructura del Símbolo</h5>
           <p>El símbolo está compuesto por los siguentes elementos:</p>
 
@@ -865,6 +945,10 @@ include_once '../estructura/header.php';
               <li>F(full bar)</li>
             </ul>
           </p>
+
+          <div class="text-center">
+            <img src="../img/USPS_Structure.gif" alt="RMS4CC structure">
+          </div>
 
           <h5 class="mt-3">Conjunto de caracteres</h5>
           <p>Esta simbología soporta los siguiente caracteres:
@@ -898,7 +982,7 @@ include_once '../estructura/header.php';
       </div>
     </div>
 
-    <div class="accordion-item mb-3">
+    <div class="accordion-item">
       <h2 class="accordion-header" id="heading17">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse17" aria-expanded="true" aria-controls="collapse17">
           <b>Standard 2 of 5</b>
@@ -909,6 +993,10 @@ include_once '../estructura/header.php';
           <p><strong>Standard 2 of 5</strong>, también conocido como "IATA 2 of 5", es miembro de la familia simbológica del Code 2 of 5, el cual fue desarrollado por primera vez en 1968. Se lo ha utilizado por el International Air Transport Association (IATA) para el procesado de carga aerea.</p>
 
           <p>Los espacios un un símbolo Standard 2 of 5 son de ancho fijo, para así solamente que las barras sean utilizadas para codificar información. El "2 of 5" proviene del hecho de que de cinco barras para codificar un caracter, dos son anchas y tres angostas.</p>
+
+          <div class="text-center">
+            <img src="../img/Standard2of5.gif" alt="Standard 2 of 5 barcode">
+          </div>
 
           <h5 class="mt-3">Estructura del Símbolo</h5>
           <p>El símbolo está compuesto por los siguentes elementos:</p>
@@ -927,6 +1015,184 @@ include_once '../estructura/header.php';
 
           <h5 class="mt-3">Dígito de Verificación</h5>
           <p>Standard 2 of 5 contiene un dígito de verificación que esta basado en el algorítmo modulo-10</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="heading18">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse18" aria-expanded="true" aria-controls="collapse18">
+          <b>UPC-A</b>
+        </button>
+      </h2>
+      <div id="collapse18" class="accordion-collapse collapse" aria-labelledby="heading18" data-bs-parent="#accordionBarcodes">
+        <div class="accordion-body">
+          <p>Universal Product Code <strong>(UPC)</strong>fue desarrollado inicialmente en los 1970s para ser utilizado por la industria de mercadería de Estados Unidos, su uso de expandió a otros mercados en EEUU e internacionalmente.</p>
+
+          <p>UPC-A es un subconjuto del sistema European Article Numbering (EAN), lo cual significa que cualquier sistema que pueda leer EAN/JAN-13 puede leer UPC-A. Un símbolo UPC-A que es creado en Estados Unidos puede ser transformado en un símbolo EAN-13 prefijandole un 0.</p>
+
+          <p>UPC-A está definido en la norma ISO/IEC 15420 <i>Information technology - Automatic identification and data capture techniques - EAN/UPC bar code symbology specification.</i> La implementación CS1 está definida en <i>GS1 General Specifications.</i></p>
+
+          <div class="text-center">
+            <img src="../img/UPCA.gif" alt="UPC-A barcode">
+          </div>
+
+          <h5 class="mt-3">Estructura del Símbolo</h5>
+          <p>El símbolo está compuesto por los siguentes elementos:</p>
+
+          <ul>
+            <li>Zona de inicio con espaciado</li>
+            <li>Patrón de barras inicial (caracter inicial)</li>
+            <li>Seis caracteres símbolo</li>
+            <li>Patrón de barras central (caracter central)</li>
+            <li>Seis caracteres símbolo, incluyendo un dígito de verificación</li>
+            <li>Patrón de barras final (caracter final)</li>
+            <li>Zona de finalizado con espaciado</li>
+          </ul>
+
+          <p>UPC-A codifica 11 dígitos de información de valor numérico junto a un dígito de verificación, haciendo así un total de 12 dígitos.</p>
+
+          <p>La mayoría de simbologías de códigos de barras imprimen barras y espacios en dos tamaños, pero con UPC, se pueden utilizar cuatro tamaños. Esto habilita a cada caracter numérico ser representado con solo dos barras y dos espacios, que es el número mínimo de módulos requeridos por caracter en cualquier simbología.</p>
+
+          <p>Aunque los códigos de barras UPC vienen en diferentes longitudes de mensajes, estas no son completamente variables como ocurre en otras simbologías.</p>
+
+          <p><b>Patrón de barras.</b> Los patrones de barras son los caracteres iniciales, centrales y finales en un símbolo UPC-A</p>
+
+          <p>Los caracteres de inicio y fin son idénticos. Están compuestos de tres modulos:
+            <ul>
+              <li>Barra angosta</li>
+              <li>Espacio angosto</li>
+              <li>Barra angosta</li>
+            </ul>
+          </p>
+
+          <p>El caracter central esta compuesto de cinco módulos:
+            <ul>
+              <li>Espacio angosto</li>
+              <li>Barra angosta</li>
+              <li>Espacio angosto</li>
+              <li>Barra angosta</li>
+              <li>Espacio angosto</li>
+            </ul>
+          </p>
+
+          <p>Las barras para estos caracteres son más largas que las borras en el resto del símbolo y a veces son nombradas "barras de seguridad".</p>
+
+          <h5 class="mt-3">Conjunto de caracteres</h5>>
+          <p>Esta simbología soporta todos los caracteres númericos (0-9).</p>
+
+          <h5 class="mt-3">Dígito de verificación</h5>
+          <p>UPC-A contiene un dígito de verificación que está basado en el algorítmo modulo-10.</p>
+
+          <h5 class="mt-3">Densidad</h5>
+          <p>Al tener cuatro tipo de anchos de impresiones para las barras y espacios en vez de dos, EAN ocupa la mitad de cantidad de barras y espacios relativos a "Interleaved 2 of 5" para representar cada caracter. Aunque, el uso de barras y espacios más anchos nulifican el ahorrado. "Interleaved 2 of 5" codifica información mucho más densa que EAN.</p>
+
+          <h5 class="mt-3">Añadiendo otros Símbolos</h5>
+          <p>Símbolos de dos dígitos y cinco dígitos (códigos de barras suplemento) estan disponibles para ser añadidos a la derecha del símbolo UPC-A. Estos símbolos añadidos son usualmente creados para agregar una fecha o un precio sugerido por el productor (MSRP) para díarios, libros y productos de peso tales como comida. El conjunto de caracteres y densidad de los símbolos añadidos es igual a UPC-A. Siempre se agrega una interpretacón leible para seres humanos.</p>
+
+          <p>Los caracteres iniciales para símbolos de dos dígitos o cinco dígitos son armados a partir los siguientes tres módulos:
+            <ul>
+              <li>Barra simple</li>
+              <li>Espacio simple</li>
+              <li>Barra doble</li>
+            </ul>
+          </p>
+
+          <h5 class="mt-3">Sistema caracteres numéricos UPC-A</h5>
+          <p>El primer dígito de un código UPC-A es llamado el sistema de caracter numérico. Tal como pasa con el dígito de verificación, es usualmente excluido por lector de código de barras y por lo tanto no entra en la computadora o caja registradora. La primera generación de productos que fueron etiquetados con UPC-A casi exclusivamente utilizaban un 0 como sistema de caracter numérico. Aunque, más y más productos utilizan códigos de barras UPC, sistemas de caracter numéricos diferentes a 0 se estan volviendo más prevalentes.</p>
+
+          <p>Para especificar que un código de barras UPC-A tiene un sistema de caracter numérico distinto a 0, se debe especificar 11 dígitos en el string. Si lo que se quiere es transmitir este primer dígito a una caja registradora o un software de base de datos, se debe configurar el lector de código de barras para poder realizar la operación. Esto hace que la efectifividad de la longitud del mensaje a ser codificado en UPC-A sea de hasta 11 dígitos.</p>
+
+          <h5 class="mt-3">Combinando UPC con otras simbologías</h5>
+          <p>Ya que muchos productos que compramos vienen convenientemente pre-etiquetados con códigos de barras UPC, se precisa un lector de códigos de barras para esta simbología. Estos códigos de barras son usualmente producidos fotográficamente o con una impresora laser. Aunque, ya que la mayoría de lectores de códigos de barras pueden discriminar automaticamente entre varias simbologías de códigos de barras, es muy sencillo combinar distintas simbologías para entornos de aplicaciones controlados.</p>
+
+          <p>Si se tiene un lector de códigos de barras que pueden discriminar automaticamente, se recomienda utilizar "Interleaved 2 of 5" o "Code 39" para códigos de barras hogareños. Debido a que UPC es un código solamente numérico, "Interleaved 2 of 5" sería el sustituto preferido, ya que utliza la mitad del espacio que "Code 39" utiliza.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item mb-3">
+      <h2 class="accordion-header" id="heading19">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse19" aria-expanded="true" aria-controls="collapse19">
+          <b>UPC-E</b>
+        </button>
+      </h2>
+      <div id="collapse19" class="accordion-collapse collapse" aria-labelledby="heading19" data-bs-parent="#accordionBarcodes">
+        <div class="accordion-body">
+          <p>Universal Product Code <strong>(UPC)</strong>fue desarrollado inicialmente en los 1970s para ser utilizado por la industria de mercadería de Estados Unidos, su uso de expandió a otros mercados en EEUU e internacionalmente.</p>
+
+          <p>UPC-E es una versión comprimida de UPC. Suprime ceros para salvar espacio y fue desarrollado para items que son muy pequeños para almacenar un código de barras UPC-A.</p>
+
+          <p>UPC-E está definido en la norma ISO/IEC 15420 <i>Information technology - Automatic identification and data capture techniques - EAN/UPC bar code symbology specification.</i> La implementación CS1 está definida en <i>GS1 General Specifications.</i></p>
+
+          <div class="text-center">
+            <img src="../img/UPCE.gif" alt="UPC-E barcode">
+          </div>
+
+          <h5 class="mt-3">Estructura del Símbolo</h5>
+          <p>El símbolo está compuesto por los siguentes elementos:</p>
+
+          <ul>
+            <li>Zona de inicio con espaciado</li>
+            <li>Patrón de barras inicial (caracter inicial)</li>
+            <li>Seis caracteres símbolo</li>
+            <li>Patrón de barras final (caracter final)</li>
+            <li>Zona de finalizado con espaciado</li>
+          </ul>
+
+          <p>UPC-E codifica 6 dígitos de información de valor numérico junto a un dígito de verificación y sistema caracter numérico, haciendo así un total de 8 dígitos.</p>
+
+          <p>La mayoría de simbologías de códigos de barras imprimen barras y espacios en dos tamaños, pero con UPC, se pueden utilizar cuatro tamaños. Esto habilita a cada caracter numérico ser representado con solo dos barras y dos espacios, que es el número mínimo de módulos requeridos por caracter en cualquier simbología.</p>
+
+          <p>Aunque los códigos de barras UPC vienen en diferentes longitudes de mensajes, estas no son completamente variables como ocurre en otras simbologías.</p>
+
+          <p><b>Patrón de barras.</b> Los patrones de barras son los caracteres iniciales, centrales y finales en un símbolo UPC-A</p>
+
+          <p>Los caracteres de inicio y fin son idénticos. Están compuestos de tres modulos:
+            <ul>
+              <li>Barra angosta</li>
+              <li>Espacio angosto</li>
+              <li>Barra angosta</li>
+            </ul>
+          </p>
+
+          <p>El caracter central esta compuesto de seis módulos:
+            <ul>
+              <li>Espacio angosto</li>
+              <li>Barra angosta</li>
+              <li>Espacio angosto</li>
+              <li>Barra angosta</li>
+              <li>Espacio angosto</li>
+              <li>Barra angosta</li>
+            </ul>
+          </p>
+
+          <p>Las barras para estos caracteres son más largas que las borras en el resto del símbolo y a veces son nombradas "barras de seguridad".</p>
+
+          <h5 class="mt-3">Conjunto de caracteres</h5>
+          <p>Esta simbología soporta todos los caracteres númericos (0-9).</p>
+
+          <h5 class="mt-3">Dígito de verificación</h5>
+          <p>UPC-E contiene un dígito de verificación que está basado en el algorítmo modulo-10.</p>
+
+          <h5 class="mt-3">Densidad</h5>
+          <p>Al tener cuatro tipo de anchos de impresiones para las barras y espacios en vez de dos, EAN ocupa la mitad de cantidad de barras y espacios relativos a "Interleaved 2 of 5" para representar cada caracter. Aunque, el uso de barras y espacios más anchos nulifican el ahorrado. "Interleaved 2 of 5" codifica información mucho más densa que EAN.</p>
+
+          <h5 class="mt-3">Añadiendo otros Símbolos</h5>
+          <p>Símbolos de dos dígitos y cinco dígitos (códigos de barras suplemento) estan disponibles para ser añadidos a la derecha del símbolo UPC-A. Estos símbolos añadidos son usualmente creados para agregar una fecha o un precio sugerido por el productor (MSRP) para díarios, libros y productos de peso tales como comida. El conjunto de caracteres y densidad de los símbolos añadidos es igual a UPC-A. Siempre se agrega una interpretacón leible para seres humanos.</p>
+
+          <p>Los caracteres iniciales para símbolos de dos dígitos o cinco dígitos son armados a partir los siguientes tres módulos:
+            <ul>
+              <li>Barra simple</li>
+              <li>Espacio simple</li>
+              <li>Barra doble</li>
+            </ul>
+          </p>
+
+          <h5 class="mt-3">Combinando UPC con otras simbologías</h5>
+          <p>Ya que muchos productos que compramos vienen convenientemente pre-etiquetados con códigos de barras UPC, se precisa un lector de códigos de barras para esta simbología. Estos códigos de barras son usualmente producidos fotográficamente o con una impresora laser. Aunque, ya que la mayoría de lectores de códigos de barras pueden discriminar automaticamente entre varias simbologías de códigos de barras, es muy sencillo combinar distintas simbologías para entornos de aplicaciones controlados.</p>
+
+          <p>Si se tiene un lector de códigos de barras que pueden discriminar automaticamente, se recomienda utilizar "Interleaved 2 of 5" o "Code 39" para códigos de barras hogareños. Debido a que UPC es un código solamente numérico, "Interleaved 2 of 5" sería el sustituto preferido, ya que utliza la mitad del espacio que "Code 39" utiliza.</p>
         </div>
       </div>
     </div>
