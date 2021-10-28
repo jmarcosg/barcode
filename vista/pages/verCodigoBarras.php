@@ -35,7 +35,7 @@ switch ($tipoCodificacion) {
             echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_CODE_11)) . '">';
             echo '<p>' . $codigo . '</p>';
         } else {
-            echo '<h4>Esta codificacion solo admite el formato: S1234S</h4>';
+            echo '<h4>Esta codificacion solo admite el formato: 12345678-</h4>';
         }
         break;
     case 'TYPE_CODE_39':
@@ -93,16 +93,34 @@ switch ($tipoCodificacion) {
         echo '<p>' . $codigo . '</p>';
         break;
     case 'TYPE_CODE_128_A':
-        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_CODE_128_A)) . '">';
-        echo '<p>' . $codigo . '</p>';
+        $codigoValidado = $validador->validar128AB($codigo);
+
+        if ($codigoValidado) {
+            echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_CODE_128_A)) . '">';
+            echo '<p>' . $codigo . '</p>';
+        } else {
+            echo '<h4>Esta codificación solo admite menos de 127 caracteres, valores numerícos (0-9), caracteres alfabeticos en mayúsculas (A-Z), símbolos de puntación, siete caracteres especiales y caracteres de "control"</h4>';
+        }
         break;
     case 'TYPE_CODE_128_B':
-        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_CODE_128_B)) . '">';
-        echo '<p>' . $codigo . '</p>';
+        $codigoValidado = $validador->validar128AB($codigo);
+
+        if ($codigoValidado) {
+            echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_CODE_128_B)) . '">';
+            echo '<p>' . $codigo . '</p>';
+        } else {
+            echo '<h4>Esta codificación solo admite menos de 127 caracteres, valores numerícos (0-9), caracteres alfabeticos en mayúsculas (A-Z), símbolos de puntación, siete caracteres especiales y caracteres de "control"</h4>';
+        }
         break;
     case 'TYPE_CODE_128_C':
-        echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_CODE_128_C)) . '">';
-        echo '<p>' . $codigo . '</p>';
+        $codigoValidado = $validador->validar128C($codigo);
+
+        if ($codigoValidado) {
+            echo '<img src="data:image/png;base64,' . base64_encode($codigoBarra->getBarcode($codigo, $codigoBarra::TYPE_CODE_128_C)) . '">';
+            echo '<p>' . $codigo . '</p>';
+        } else {
+            echo '<h4>Esta codificación solo admite menos de 127 caracteres, dígitos pares desde el 00 al 99 y tres caracteres especiales</h4>';
+        }
         break;
     case 'TYPE_CODABAR':
         $codigoValidado = $validador->validarCODABAR($codigo);

@@ -13,7 +13,7 @@ class controlCodigoBarras
     {
         $valido = true;
 
-        if (!preg_match('/^[S]{1}[0-9]+[S]{1}$/', $codigo)) {
+        if (!preg_match('/^[0-9]+[-]{1}$/', $codigo)) {
             $valido = false;
         }
 
@@ -106,6 +106,40 @@ class controlCodigoBarras
     }
 
     /**
+     * Verifica la codificacion C128 A-B
+     * Tiene que ser: Cualquier cantidad de caracteres menor a 127 y solamente números
+     * @param $codigo
+     * @return $valido
+     */
+    public function validar128AB($codigo)
+    {
+        $valido = true;
+
+        if (!preg_match('/[\d]{1,128}/', $codigo)) {
+            $valido = false;
+        }
+
+        return $valido;
+    }
+
+    /**
+     * Verifica la codificacion C128C
+     * Tiene que ser: Cualquier cantidad de caracteres menor a 127 y solamente números
+     * @param $codigo
+     * @return $valido
+     */
+    public function validar128C($codigo)
+    {
+        $valido = true;
+
+        if (!preg_match('/[0-9]{1,128}/', $codigo)) {
+            $valido = false;
+        }
+
+        return $valido;
+    }
+
+    /**
      * Verifica la codificacion CODABAR
      * Tiene que ser: Menor o igual a 16 caracteres, tiene que tener formato NNNNNNL
      * Donde N es cualquier número del 0-9 y L una letra de la A-D
@@ -165,10 +199,10 @@ class controlCodigoBarras
      */
     public function validarIMB($codigo)
     {
-        $valido = true;
+        $valido = false;
 
-        if (!is_numeric($codigo) && count(str_split($codigo)) > 31) {
-            $valido = false;
+        if (is_numeric($codigo) && (count(str_split($codigo)) == 20 || count(str_split($codigo)) == 25 || count(str_split($codigo)) == 29 || count(str_split($codigo)) == 31)) {
+            $valido = true;
         }
 
         return $valido;
